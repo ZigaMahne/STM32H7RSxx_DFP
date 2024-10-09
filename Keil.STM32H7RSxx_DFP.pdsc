@@ -795,13 +795,12 @@ The Cortex-M7 core features a floating point unit (FPU) which supports Arm doubl
         <file category="doc" name="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/CubeMX.md"/>
       </files>
     </component>
-
   </components>
 
   <csolution>
-    <!-- CubeMX CMSIS Solution template -->
-    <template name="CubeMX solution" path="Templates/CubeMX" file="CubeMX.csolution.yml" condition="STM32H7RS">
-      <description>Create a CubeMX solution with project</description>
+    <!-- CubeMX Basic CMSIS Solution template -->
+    <template name="CubeMX Basic solution" path="Templates/CubeMX" file="CubeMX.csolution.yml" condition="STM32H7RS">
+      <description>Create a CubeMX basic solution with project</description>
     </template>
   </csolution>
 </package>
