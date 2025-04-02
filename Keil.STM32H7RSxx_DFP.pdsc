@@ -14,8 +14,9 @@
   </licenseSets>
 
   <releases>
-    <release version="1.0.2-dev">
+    <release version="1.0.3-dev">
       Active development...
+      Updated documentation references
     </release>
   </releases>
 
@@ -45,7 +46,7 @@ The Cortex-M7 core features a floating point unit (FPU) which supports Arm doubl
       <algorithm name="CMSIS/Flash/MX66UW1G45G_STM32H7S78-DK-XSPIM1.FLM" start="0x90000000" size="0x08000000" RAMstart="0x20000000" RAMsize="0x00010000" default="0" />
 
       <debugvars configfile="CMSIS/Debug/STM32H7Rx_7Sx.dbgconf" version="1.0.0">
-        // Debug Access Variables, can be modified by user via copies of DBGCONF files as created by uVision. Also see sub-family level.
+        // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
         __var DbgMCU_CR        = 0x00000007;   // DBGMCU_CR:       DBGMCU configuration register
                                                //                  [21] DBGCKEN, [20] TRACECLKEN
                                                //                  [ 2] DBGSTBY, [ 1] DBGSTOP,  [ 0] DBGSLEEP
@@ -791,7 +792,7 @@ The Cortex-M7 core features a floating point unit (FPU) which supports Arm doubl
         #define CMSIS_device_header "stm32h7rsxx.h"
       </RTE_Components_h>
       <files>
-        <file category="doc" name="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/CubeMX.md"/>
+        <file category="doc" name="https://open-cmsis-pack.github.io/cmsis-toolbox/CubeMX"/>
       </files>
     </component>
   </components>
