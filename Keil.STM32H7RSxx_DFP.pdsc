@@ -14,9 +14,13 @@
   </licenseSets>
 
   <releases>
-    <release version="1.0.3-dev">
+    <release version="1.0.4-dev">
       Active development...
       Updated documentation references
+      Device support:
+      - Shortened device family description
+      - Added Ddsp processor attribute
+      - Updated debug configuration files (MCU APBx Freeze registers)
     </release>
   </releases>
 
@@ -30,12 +34,11 @@
 
   <devices>
     <family Dfamily="STM32H7RS Series" Dvendor="STMicroelectronics:13">
-      <processor Dcore="Cortex-M7" DcoreVersion="r0p1" Dclock="550000000" Dmpu="MPU" Dfpu="DP_FPU" Dendian="Little-endian"/>
+      <processor Dcore="Cortex-M7" DcoreVersion="r0p1" Dclock="550000000" Dmpu="MPU" Dfpu="DP_FPU" Dendian="Little-endian" Ddsp="DSP"/>
       <debugconfig default="swd" swj="true" clock="5000000" sdf="CMSIS/Debug/STM32H7Rx_7Sx.sdf"/>
 
       <description>
-The STM32H7RS series is based on the high-performance Arm® Cortex®-M7 32-bit RISC core operating at up to 600 MHz.
-The Cortex-M7 core features a floating point unit (FPU) which supports Arm double-precision (IEEE 754 compliant) and single-precision dataprocessing instructions and data types.
+High-performance STM32H7 MCUs with Arm Cortex-M7 core, MPU, L1 cache, DSP, DP-FPU, 1284 DMIPS at 600 MHz.
       </description>
 
       <book name="https://developer.arm.com/documentation/dui0646/latest" title="Cortex-M7 Generic User Guide"/>
@@ -45,16 +48,16 @@ The Cortex-M7 core features a floating point unit (FPU) which supports Arm doubl
       <algorithm name="CMSIS/Flash/MX25UW25645G_STM32H7S38-NUCLEO.FLM"   start="0x70000000" size="0x02000000" RAMstart="0x20000000" RAMsize="0x00010000"  default="0" />
       <algorithm name="CMSIS/Flash/MX66UW1G45G_STM32H7S78-DK-XSPIM1.FLM" start="0x90000000" size="0x08000000" RAMstart="0x20000000" RAMsize="0x00010000" default="0" />
 
-      <debugvars configfile="CMSIS/Debug/STM32H7Rx_7Sx.dbgconf" version="1.0.0">
+      <debugvars configfile="CMSIS/Debug/STM32H7Rx_7Sx.dbgconf" version="1.0.1">
         // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
         __var DbgMCU_CR        = 0x00000007;   // DBGMCU_CR:       DBGMCU configuration register
                                                //                  [21] DBGCKEN, [20] TRACECLKEN
                                                //                  [ 2] DBGSTBY, [ 1] DBGSTOP,  [ 0] DBGSLEEP
-        __var DbgMCU_AHB5_Fzr  = 0x00000000;   // DBGMCU_AHB5FZR:  DBGMCU AHB5 peripheral freeze register
-        __var DbgMCU_AHB1_Fzr  = 0x00000000;   // DBGMCU_AHB1FZR:  DBGMCU AHB1 peripheral freeze register
-        __var DbgMCU_APB1_Fzr  = 0x00000000;   // DBGMCU_APB1FZR:  DBGMCU APB1 peripheral freeze register
-        __var DbgMCU_APB2_Fzr  = 0x00000000;   // DBGMCU_APB2FZR:  DBGMCU APB2 peripheral freeze register
-        __var DbgMCU_APB4_Fzr  = 0x00000000;   // DBGMCU_APB4FZR:  DBGMCU APB4 peripheral freeze register
+        __var DbgMCU_AHB5_Fzr  = 0x0000FFFF;   // DBGMCU_AHB5FZR:  DBGMCU AHB5 peripheral freeze register
+        __var DbgMCU_AHB1_Fzr  = 0x0000FFFF;   // DBGMCU_AHB1FZR:  DBGMCU AHB1 peripheral freeze register
+        __var DbgMCU_APB1_Fzr  = 0x00E00BFF;   // DBGMCU_APB1FZR:  DBGMCU APB1 peripheral freeze register
+        __var DbgMCU_APB2_Fzr  = 0x000F0001;   // DBGMCU_APB2FZR:  DBGMCU APB2 peripheral freeze register
+        __var DbgMCU_APB4_Fzr  = 0x00041E00;   // DBGMCU_APB4FZR:  DBGMCU APB4 peripheral freeze register
         __var TraceClk_Pin     = 0x00040002;   // PE2
         __var TraceD0_Pin      = 0x00040003;   // PE3
         __var TraceD1_Pin      = 0x00040004;   // PE4
