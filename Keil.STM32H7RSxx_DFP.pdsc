@@ -14,13 +14,8 @@
   </licenseSets>
 
   <releases>
-    <release version="1.0.4-dev">
+    <release version="1.1.1-dev">
       Active development...
-      Updated documentation references
-      Device support:
-      - Shortened device family description
-      - Added Ddsp processor attribute
-      - Updated debug configuration files (MCU APBx Freeze registers)
     </release>
   </releases>
 
